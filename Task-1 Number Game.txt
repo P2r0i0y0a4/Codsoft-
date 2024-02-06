@@ -1,0 +1,56 @@
+package numbergame;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class guessing_game 
+{
+	public static void main(String args[])
+	{
+		
+	System.out.println("Welcome ,this is the number game!");
+	
+	Scanner sc1=new Scanner(System.in);
+	
+	System.out.println("I will think of a number between 1 and 100");
+	
+	Random random=new Random();
+	
+	System.out.println("You have 5 tries to guess the number");
+
+	int number=random.nextInt(100)+1;
+	int round=0;
+	
+	while(round<5)
+	{
+		System.out.println("Enter your guess");
+		int guess=sc1.nextInt();
+		
+		if(guess==number)
+		{
+			System.out.println("Congrats!you guessed the correct number:");
+			break;
+			
+		}
+		else if(guess<number)
+		{
+			System.out.println("your guess is too low.Try again");
+		
+		}
+		else
+		{
+			System.out.println("your guess is too high.Try again");
+			
+		}
+		round++;
+		
+	}
+	if(round==5)
+	{
+		System.out.println("Sorry,you have run out of attempts.The correct number was"+number);
+		
+		
+	}
+	sc1.close();
+	}
+	}
