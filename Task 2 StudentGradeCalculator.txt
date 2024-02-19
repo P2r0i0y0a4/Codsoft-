@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("welcome to student grade calculator");
+
+        Scanner sc1 = new Scanner(System.in);
+
+        System.out.print("Enter the number of subjects: ");
+        int numberofsubjects = sc1.nextInt();
+
+        int TotalMarksGained = 0;
+
+        for (int index = 1; index <= numberofsubjects; index++) {
+            System.out.print("Enter marks obtained in subject " + index + ": ");
+            int marks = sc1.nextInt();
+            TotalMarksGained=TotalMarksGained+marks;
+        }
+
+        double average ;
+        average= (double) TotalMarksGained / (numberofsubjects * 100) * 100;
+
+        char grade;
+        if (average >= 90) {
+            grade = 'A';
+        } else if (average >= 80) {
+            grade = 'B';
+        } else if (average >= 70) {
+            grade = 'C';
+        } else if (average >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+        System.out.println("*********************************");
+        System.out.println("TOTAL MARK SECURED BY A STUDENT: " + TotalMarksGained);
+
+        System.out.println("*********************************");
+        System.out.println("AVERAGE PERCENTAGE GAINED BY STUDENT: " + average + "%");
+
+        System.out.println("*********************************");
+        System.out.println("GRAGE OBTAINED BY STUDENT: " + grade);
+        
+        System.out.println("********************************");
+
+        sc1.close();
+    }
+
+   
+}
